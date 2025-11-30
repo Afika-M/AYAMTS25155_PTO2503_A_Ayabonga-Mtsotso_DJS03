@@ -26,6 +26,13 @@
   margin-left: 5px;
 }
 
+@keyframes dots {
+  0%, 20% { content: ""; }
+  40% { content: "."; }
+  60% { content: ".."; }
+  80%, 100% { content: "..."; }
+}
+
 /* Error state */
 .status-message.error {
   background-color: #ffe6e6;
