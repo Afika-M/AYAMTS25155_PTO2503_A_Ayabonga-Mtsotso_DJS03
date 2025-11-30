@@ -1,75 +1,49 @@
-# DJS03: React Podcast Landing Page
+# 🎙️ Podcast App
 
-## Overview
+A responsive React application that fetches and displays podcast previews from a public API
 
-In this project, you will build the landing page for a podcast discovery app using **React**. Your goal is to fetch podcast data from an external API and dynamically render a **responsive grid of podcast previews**. This project focuses on **data fetching**, **component structure**, **rendering logic**, and **layout styling**.
+### 🚀 Features
 
----
+• **Dynamic API Integration** : Fetches real podcast data and genre metadata from
+• **Loading & Error States**: Displays clear loading indicators and error messages to guide the user experience.
+•**Responsive Grid Layout**: Podcast previews adapt across desktop, tablet, and mobile screens.
+•**Reusable Components**: Modular structure with , , , and .
+•**Genre Mapping**: Uses  to convert genre IDs to readable names.
+•**Human-Readable Dates**: Formats ISO timestamps using .
+•**Modal Details View**: Click any podcast to view detailed info in a modal overlay
 
-## Core Objectives
 
-- Fetch podcast data from an API: https://podcast-api.netlify.app/ on initial page load.
-- Display a loading indicator while data is being fetched, and handle errors or empty results with a clear user message.
-- Render a responsive **grid layout** of podcast previews using modular, reusable React components.
-- Pass podcast data into components via props and render each podcast card with the following:
-  - Podcast **image**
-  - Podcast **title**
-  - Number of **seasons**
-  - Associated **genre names**
-  - Formatted **last updated** date (e.g., "2 days ago")
-- Apply clean, consistent layout and styling across different screen sizes using CSS Grid or Flexbox.
-- Maintain high-quality, readable code with clear structure and **JSDoc comments** for key functions and components.
+### 📦 Folder Structure
+src/
+├── api/
+│   └── fetchPodcast.js         # API fetch logic
+├── components/
+│   ├── Header.jsx              # App header
+│   ├── PodcastCard.jsx         # Individual podcast preview
+│   ├── PodcastGrid.jsx         # Grid layout for all podcasts
+│   └── Modal.jsx               # Detailed podcast modal
+├── utils/
+│   ├── DateUtils.js            # Formats updated dates
+│   └── GenreService.js         # Maps genre IDs to names
+├── data.js                     # Static genre list
+├── App.jsx                     # Main app logic
+└── main.js                    # Entry point
 
----
 
-## Technical Requirements
+### 🛠️ Tech Stack
+- React
+- JavaScript
+- CSS
+- JSDoc
 
-- Use **React functional components**
-- Use the **Fetch API**
-- Use `useEffect()` to fetch data once on mount
-- Use `useState()` to manage podcast data
-- Use `.map()` to dynamically render PodcastPreviewCard components
-- Format dates using `date-fns` or a custom formatter
 
----
+### 📚 Setup Instructions
+- Clone the repo:
+```git clone https://github.com/Afika-M/AYAMTS25155_PTO2503_A_Ayabonga-Mtsotso_DJS03?tab=readme-ov-file```
+- `cd podcast-app`
+- Install dependencies:
+`npm install`
+- Start the development server:
+`npm start`
+- Open http://localhost:3000 in your browser.
 
-## Responsiveness Requirements
-
-- Must look good on:
-  - Desktop (≥1200px)
-  - Tablet (~768px)
-  - Mobile (~375px)
-- Use **CSS Grid** or **Flexbox**
-- Media queries or frameworks like **Tailwind CSS** are allowed
-
----
-
-## Deliverables
-
-- **Functional React Application**
-
-  - A working React app that fetches podcast data from an external API on initial load.
-  - The app renders a grid of podcast previews using reusable components.
-
-- **Loading, Error, and Empty States**
-
-  - A clear loading indicator is displayed while fetching data.
-  - Meaningful error or empty state messaging is shown if the fetch fails or returns no results.
-
-- **Podcast Preview Card Component**
-
-  - A reusable component that displays:
-    - Podcast image
-    - Podcast title
-    - Number of seasons
-    - Genre tags
-    - Last updated date in a human-readable format (e.g., "3 days ago")
-
-- **Responsive Layout**
-
-  - Grid layout that adapts to mobile, tablet, and desktop screen sizes using responsive design principles.
-
-- **Codebase**
-  - Clean, modular code with clearly separated components.
-  - All major functions and modules documented with **JSDoc** comments.
-  - Consistent formatting across JavaScript, JSX, HTML, and CSS files.

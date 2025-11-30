@@ -1,9 +1,15 @@
-import { useEffect, useState } from 'react';
-import { fetchPodcasts } from './api/fetchPodcast'; 
-import PodcastGrid from './components/PodcastGrid';
-import {genres} from './data'
-import Header from './components/Header';
-import './App.css';
+import { useEffect, useState } from "react";
+import { fetchPodcasts } from "./api/fetchPodcast";
+import PodcastGrid from "./components/PodcastGrid";
+import { genres } from "./data";
+import Header from "./components/Header";
+import "./App.css";
+
+/**Main application component for the Podcast App
+ * Manages state for podcasts, loading, and error handling
+ * Renders Header and PodcastGrid components
+ * @returns JSX.Element
+ */
 
 function App() {
   const [podcasts, setPodcasts] = useState([]);
@@ -12,22 +18,24 @@ function App() {
 
   useEffect(() => {
     fetchPodcasts(setPodcasts, setError, setLoading);
-  }, []); 
+  }, []);
 
   return (
     <>
-      <Header />  
+      <Header />
       <main>
-        {loading && <div className="status-message loading">Loading podcasts</div>}
+        {loading && (
+          <div className="status-message loading">Loading podcasts</div>
+        )}
 
-        {error &&  <div className="status-message error">Error: {error}</div>}
+        {error && <div className="status-message error">Error: {error}</div>}
 
         {!loading && !error && (
-         <PodcastGrid podcastList={podcasts} genres={genres} />
+          <PodcastGrid podcastList={podcasts} genres={genres} />
         )}
       </main>
     </>
   );
 }
 
-export default App
+export default App;
