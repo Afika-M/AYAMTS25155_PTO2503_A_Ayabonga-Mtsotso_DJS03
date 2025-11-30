@@ -1,16 +1,49 @@
-# React + Vite
+# 🎙️ Podcast App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React application that fetches and displays podcast previews from a public API
 
-Currently, two official plugins are available:
+### 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+• **Dynamic API Integration** : Fetches real podcast data and genre metadata from
+• **Loading & Error States**: Displays clear loading indicators and error messages to guide the user experience.
+•**Responsive Grid Layout**: Podcast previews adapt across desktop, tablet, and mobile screens.
+•**Reusable Components**: Modular structure with , , , and .
+•**Genre Mapping**: Uses  to convert genre IDs to readable names.
+•**Human-Readable Dates**: Formats ISO timestamps using .
+•**Modal Details View**: Click any podcast to view detailed info in a modal overlay
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 📦 Folder Structure
+src/
+├── api/
+│   └── fetchPodcast.js         # API fetch logic
+├── components/
+│   ├── Header.jsx              # App header
+│   ├── PodcastCard.jsx         # Individual podcast preview
+│   ├── PodcastGrid.jsx         # Grid layout for all podcasts
+│   └── Modal.jsx               # Detailed podcast modal
+├── utils/
+│   ├── DateUtils.js            # Formats updated dates
+│   └── GenreService.js         # Maps genre IDs to names
+├── data.js                     # Static genre list
+├── App.jsx                     # Main app logic
+└── main.js                    # Entry point
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🛠️ Tech Stack
+- React
+- JavaScript
+- CSS
+- JSDoc
+
+
+### 📚 Setup Instructions
+- Clone the repo:
+```git clone https://github.com/Afika-M/AYAMTS25155_PTO2503_A_Ayabonga-Mtsotso_DJS03?tab=readme-ov-file```
+- `cd podcast-app`
+- Install dependencies:
+`npm install`
+- Start the development server:
+`npm start`
+- Open http://localhost:3000 in your browser.
+
