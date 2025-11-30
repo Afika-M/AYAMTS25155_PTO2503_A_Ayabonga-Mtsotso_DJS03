@@ -28,7 +28,7 @@ export default function PodcastGrid({ podcastList}) {
         />
       ))}
 
-      {/* Render modal only if a podcast is selected */}
+     /* {/* Render modal only if a podcast is selected */}
       {selectedPodcast && (
         <Modal podcast={selectedPodcast} onClose={handleClose} />
       )}
