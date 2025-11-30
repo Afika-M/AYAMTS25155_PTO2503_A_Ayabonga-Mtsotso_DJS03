@@ -15,12 +15,14 @@ export async function fetchPodcasts(setPodcast, setError, setLoading) {
     try{
         const response = await fetch("https://podcast-api.netlify.app/");
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
         setPodcast(data);
+        setError(null);
     } catch (error) {
         console.error("Error fetching podcast data:", error);
+        setError(error.message);
     } finally {
         setLoading(false);
     }

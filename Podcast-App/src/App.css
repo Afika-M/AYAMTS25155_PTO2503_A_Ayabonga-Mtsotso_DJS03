@@ -1,42 +1,35 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* ========================
+   Status Message Styles
+======================== */
+.status-message {
+  padding: 12px 20px;
+  margin: 15px auto;
+  border-radius: 6px;
   text-align: center;
+  font-weight: 600;
+  max-width: 400px;
+  transition: all 0.3s ease;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Loading state */
+.status-message.loading {
+  background-color: #eef6ff;
+  color: #0055aa;
+  border: 1px solid #99c;
+  position: relative;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Animated dots for loading */
+.status-message.loading::after {
+  content: "...";
+  animation: dots 1.5s steps(4, end) infinite;
+  margin-left: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* Error state */
+.status-message.error {
+  background-color: #ffe6e6;
+  color: #b00;
+  border: 1px solid #f99;
+  animation: shake 0.4s ease-in-out;
 }
