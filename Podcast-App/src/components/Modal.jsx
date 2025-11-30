@@ -20,8 +20,12 @@ const Modal = ({ podcast, onClose }) => {
         <h2>{podcast.title}</h2>
         <img src={podcast.image} className="modal-img"/>
         <p>Seasons: {podcast.seasons}</p>
-        <p>Updated: {formattedDate}</p>
-        <p>Genres: {genreNames.join(", ")}</p>
+        <p className="updated">Updated: {formattedDate}</p>
+        <div className="tags">
+            {genreNames.map((g, idx) => (
+            <span key={idx} className="tag">{g}</span>
+            ))}
+      </div>
       </div>
     </div>
   );
