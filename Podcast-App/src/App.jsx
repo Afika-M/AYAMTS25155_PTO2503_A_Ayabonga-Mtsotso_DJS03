@@ -23,7 +23,7 @@ function App() {
         {error &&  <div className="status-message error">Error: {error}</div>}
 
         {!loading && !error && (
-         <PodcastGrid podcasts={podcasts} genres={genres} />
+         <PodcastGrid podcastList={podcasts} genres={genres} />
         )}
       </main>
     </>
